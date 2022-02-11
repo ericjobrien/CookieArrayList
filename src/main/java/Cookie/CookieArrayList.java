@@ -22,6 +22,16 @@ public class CookieArrayList {
         this.lengthOfArray = lengthOfArray;
     }
 
+    public Cookie[] getCookieArray() {
+        return cookieArray;
+    }
+
+
+    public Integer getLengthOfArray() {
+        return lengthOfArray;
+    }
+
+
     //    Get method that returns the something of a given index;
 
     public String getTypeOfCookie(int index) {
@@ -57,7 +67,6 @@ public class CookieArrayList {
 
         Cookie[] cookies = this.cookieArray;
         Integer currentLength = this.getIndexOfFirstNull(cookies);
-        System.out.println("This is the current length of add feature: " + currentLength);
 
         if(currentLength >= cookies.length) {
            Cookie[] newCookieArray = new Cookie[currentLength * 2];
@@ -90,7 +99,7 @@ public class CookieArrayList {
             checkCookie = this.cookieArray[i];
 
             while(checkCookie.getType() != null) {
-                if(checkCookie.getType() == cookieType) {
+                if(checkCookie.getType().compareTo(cookieType) == 0) {
                     return true;
                 } else {
                     return false;

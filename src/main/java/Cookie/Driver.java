@@ -96,7 +96,7 @@ public class Driver {
 
 
         CookieArrayList cookieArrayList = new CookieArrayList(cookiesArray, cookiesArray.length);
-        System.out.println("cookiesArray length is: " + cookiesArray.length);
+
         String cookieString = cookieArrayList.getTypeOfCookie(0);
 
 
@@ -124,7 +124,7 @@ public class Driver {
             System.out.println("Type of Cookie in Testing 2 is " + testingAdd2[i] + " at index " + i);
         }
 
-        System.out.println("Testing if something is present: " + cookieArrayList2.isPresent("chocolate chip"));
+        System.out.println("Testing if something is present: " + cookieArrayList2.isPresent("Absolutely"));
 
 
 
