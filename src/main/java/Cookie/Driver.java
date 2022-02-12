@@ -2,7 +2,12 @@ package Cookie;
 
 import java.util.Arrays;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 public class Driver {
+
+    public static final Logger log = Logger.getLogger(Driver.class);
 
     public static void main(String[] args){
         boolean myBoolean = false;
@@ -111,41 +116,41 @@ public class Driver {
         Cookie[] testingAdd1 = cookieArrayList.addCookie(cookie8);
 
         for (int i = 0; i < testingAdd1.length; i++) {
-            System.out.println("Type of cookie in Testing 1 is " + testingAdd1[i] + " at index " + i);
+            Driver.log.info("Type of cookie in Testing 1 is " + testingAdd1[i] + " at index " + i);
         }
         CookieArrayList cookieArrayList2 = new CookieArrayList(testingAdd1, testingAdd1.length);
 
         Integer indexOfFirstNull = cookieArrayList2.getIndexOfFirstNull(testingAdd1);
-        System.out.println("Found Index of first null: " + indexOfFirstNull);
+        Driver.log.info("Found Index of first null: " + indexOfFirstNull);
 
         Cookie[] testingAdd2 = cookieArrayList2.addCookie(cookie9);
 
         for(int i = 0; i < testingAdd2.length; i++) {
-            System.out.println("Type of Cookie in Testing 2 is " + testingAdd2[i] + " at index " + i);
+            Driver.log.info("Type of Cookie in Testing 2 is " + testingAdd2[i] + " at index " + i);
         }
 
-        System.out.println("Testing if something is present: " + cookieArrayList2.isPresent("Absolutely"));
+        Driver.log.info("Testing if something is present: " + cookieArrayList2.isPresent("Absolutely"));
 
 
 
 
          cookieArrayList.setValueOfIndex(0, cookie9);
 
-        System.out.println("Did the Array change after setting value: " + cookieArrayList.getTypeOfCookie(0));
+        Driver.log.info("Did the Array change after setting value: " + cookieArrayList.getTypeOfCookie(0));
 
         CookieArrayList cookieArrayList3 = new CookieArrayList(cookiesArray, cookiesArray.length);
 
         Boolean isIdentical = CookieArrayList.isIdentical(cookieArrayList, cookieArrayList3);
 
         for(int i = 0; i <cookieArrayList.lengthOfArray; i++) {
-            System.out.println("Each cookie from Array List 1: " + cookieArrayList.getTypeOfCookie(i));
+            Driver.log.info("Each cookie from Array List 1: " + cookieArrayList.getTypeOfCookie(i));
         }
 
         for(int i = 0; i <cookieArrayList3.lengthOfArray; i++) {
-            System.out.println("Each cookie from Array List 3: " + cookieArrayList3.getTypeOfCookie(i));
+            Driver.log.info("Each cookie from Array List 3: " + cookieArrayList3.getTypeOfCookie(i));
         }
 
-        System.out.println("Checking to see if arrayLists are identical: " + isIdentical);
+        Driver.log.info("Checking to see if arrayLists are identical: " + isIdentical);
 
     }
 
